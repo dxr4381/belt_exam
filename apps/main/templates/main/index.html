@@ -8,6 +8,7 @@
   </head>
   <body>
     <div class="container">
+      <h1>WELCOME </h1>
         <div>
           <h3>Register</h3>
           <form action="/user" method="post">
@@ -18,7 +19,11 @@
             </div>
             <div>
               <label>Email</label>
-              <input type="text" name="email">
+              <input type="email" name="email">
+            </div>
+            <div>
+              <label>Date of Birth</label>
+              <input type="date" name="date">
             </div>
             <div>
               <label>Password</label>
@@ -50,6 +55,13 @@
             </div>
           </form>
         </div>
+        {% if messages %}
+          <ul>
+              {% for message in messages %}
+                  <li>{{ message }}</li>
+              {% endfor %}
+          </ul>
+        {% endif %}
     </div>
   </body>
 </html>
